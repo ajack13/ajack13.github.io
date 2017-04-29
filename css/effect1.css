@@ -45,6 +45,7 @@
 
 .ip-logo {
 	top: 0;
+	left:25px;
 	height: 110%;
 	-webkit-transform: translate3d(0,25%,0);
 	transform: translate3d(0,25%,0);
@@ -186,7 +187,7 @@
 /* Header elements when loading finishes */
 .loaded .ip-logo,
 .loaded .ip-loader {
-	opacity: 0;
+	opacity: 1;
 }
 
 .loaded .ip-logo {
