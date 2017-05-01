@@ -24,9 +24,9 @@
 body, h1, h2, h3, h4, h5 {
 	font-family: 'Montserrat', sans-serif !important;
 }
-/*
+
 body::-webkit-scrollbar {
-    width: 0.75em;
+    width: 0.5em;
 }
 
 body::-webkit-scrollbar-track {
@@ -34,9 +34,9 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
+  background-color: rgba(0,0,0,0);
   outline: 1px solid slategrey;
-}*/
+}
 
 /* Effect 1: Brackets */
 .cl-effect-1 a::before,
@@ -157,6 +157,13 @@ input.form-control ,textarea.form-control{
 	background-color:#fff ;
 	margin-top:20px;
 }
+.s_contact{
+	position:absolute;
+	bottom:4%;
+	width:400px;
+	right:10%
+}
+
 @media (max-width: 1080px) {
 
 	.brand-img {
@@ -168,7 +175,7 @@ input.form-control ,textarea.form-control{
 	.suhas{
 		position:relative;
 		display: block;
-		left:50%;
+		left:20%;
 	}
 	.res-sm{
 		width:100% !important;
@@ -178,6 +185,13 @@ input.form-control ,textarea.form-control{
 		width:100%;
 		background-color:#fff ;
 		margin-top:20px;
+	}
+	.s_contact{
+		position:relative;
+		position: block;
+		/*bottom:4%;*/
+		width:400px;
+		/*right:10%*/
 	}
 }
 </style>
@@ -346,17 +360,13 @@ input.form-control ,textarea.form-control{
 			  </div><!-- /.container-fluid -->
 			</nav>
 
-		<section style="height:700px">
+		<section style="height:750px">
 			<div class="col-md-3 hidden-xs hidden-md hidden-sm">
 				<img class="pull-right" src="img/mural.png" />
 			</div>
 			<div style="position:relative" class="res-sm col-md-9 a_bs">
 				<div class="">
 					<img class="suhas" src = "img/profile-pic.png"/>
-					<div style="position:absolute;bottom:4%;width:400px;right:10%">
-						<button class="custom_btn">Linkedin</button>
-						<button class="custom_btn">More Details</button>
-					</div>
 					<div class="row underline"></div>
 					<div style="text-align: initial">
 					  <h4 style="color:#fff;margin-top:30px">Hi there! I'm Suhas Naik</h4>
@@ -378,6 +388,10 @@ input.form-control ,textarea.form-control{
 					  <h5 style="color:#fff">Looking forward to <span class="c_underline" id="c6"> learn </span></h5>
 						<h5 style="color:#fff">with <span class="c_underline" id="c7">companies</span></h5>
 					</div>
+					<div class="s_contact">
+						<button class="custom_btn">Linkedin</button>
+						<button class="custom_btn">More Details</button>
+					</div>
 					<div class="row underline"></div>
 				</div>
 			</div>
@@ -386,7 +400,7 @@ input.form-control ,textarea.form-control{
 		</section>
 
 		<!-- blowup -->
-		<section style="height:800px;background-color:#e5e5e5">
+		<section style="height:100%;background-color:#e5e5e5;position:relative;white-space:pre-line;display:block">
 		<div class="container">
 				<div class="col-md-12" style="margin-top:35px">
 					<h2 style="color:#222c39;text-align:left;margin:25px 0px 25px 0px"><b><span class ="topbar" >Sample</span> Work</b></h2>
