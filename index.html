@@ -21,132 +21,6 @@
 
 <style>
 
-body, h1, h2, h3, h4, h5 {
-	font-family: 'Montserrat', sans-serif !important;
-}
-
-body::-webkit-scrollbar {
-    width: 0.5em;
-}
-
-body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: rgba(0,0,0,0);
-  outline: 1px solid slategrey;
-}
-
-/* Effect 1: Brackets */
-.cl-effect-1 a::before,
-.cl-effect-1 a::after {
-	display: inline-block;
-	opacity: 0;
-	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
-	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
-	transition: transform 0.3s, opacity 0.2s;
-}
-
-.cl-effect-1 a::before {
-	margin-right: 10px;
-	content: '[';
-	-webkit-transform: translateX(20px);
-	-moz-transform: translateX(20px);
-	transform: translateX(20px);
-}
-
-.cl-effect-1 a::after {
-	margin-left: 10px;
-	content: ']';
-	-webkit-transform: translateX(-20px);
-	-moz-transform: translateX(-20px);
-	transform: translateX(-20px);
-}
-
-.cl-effect-1 a:hover::before,
-.cl-effect-1 a:hover::after,
-.cl-effect-1 a:focus::before,
-.cl-effect-1 a:focus::after {
-	opacity: 1;
-	-webkit-transform: translateX(0px);
-	-moz-transform: translateX(0px);
-	transform: translateX(0px);
-}
-
-.cl-effect-1 a {
-	position: relative;
-	display: inline-block;
-	margin: 5px 30px;
-	outline: none;
-	color: #fff !important;
-	text-decoration: none;
-	letter-spacing: 1px;
-	font-weight: 400;
-	text-shadow: 0 0 1px rgba(255,255,255,0.3);
-	font-size: 1em;
-	cursor: pointer;
-}
-
-.cl-effect-1 a:hover,
-.cl-effect-1 a:focus {
-	outline: none;
-}
-.navbar-default {
-    background-color: #17202c !important;
-    border-color: #000 !important;
-    opacity: 1 !important;
-}
-.navbar {
-     border-radius: 0px !important;
-}
-
-.brand-img {
-    width: 100%;
-    left: 65%;
-    position: relative;
-    top: -20%;
-}
-.c_underline{
-	border-bottom:1px solid #fff;
-}
-.topbar{
-	border-top:6px solid #4c6582;padding-top:10px
-}
-input.form-control ,textarea.form-control{
-    background-color: #55606c !important;
-    border: 1px solid #999999 !important;
-}
-
-.a_bs{
-	width : 0%;
-	opacity: 0;
-	transition-property: width, opacity 2s;
-  transition-duration: 0.75s;
-  transition-timing-function: linear;
-}
-.a_as{
-	width : 75% !important;
-	opacity: 1 !important;
-}
-.custom_btn{
-  display:block;
-  width: 142px;
-  height: 32px;
-  font-family: Roboto;
-  font-size: 17px;
-  font-weight: 500;
-  letter-spacing: 0.8px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(70,103,132,1);
-  border: solid 1px rgba(255, 255, 255, 0.7);
-  border-radius:25px;
-	display: inline-block;
-	margin: 0px 5px;
-  cursor: pointer;
-}
-
 .suhas{
 	position:absolute;
 	top:-10px;right:15%;
@@ -351,10 +225,10 @@ input.form-control ,textarea.form-control{
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav navbar-right">
-							<li class="cl-effect-1"><a href="#">Home</a></li>
-							<li class="cl-effect-1"><a href="#">About</a></li>
-			        <li class="cl-effect-1"><a href="#">My Works</a></li>
-							<li class="cl-effect-1"><a href="#">Contact</a></li>
+							<li class="cl-effect-1 nav_ele"><a href="index.html">Home</a></li>
+							<li class="cl-effect-1 nav_ele"><a href="#">About</a></li>
+			        <li data-link_id="mywork" class="cl-effect-1 nav_ele"><a  href="#">My Works</a></li>
+							<li class="cl-effect-1 nav_ele" data-link_id="contactus"><a  "href="#">Contact</a></li>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
@@ -400,7 +274,7 @@ input.form-control ,textarea.form-control{
 		</section>
 
 		<!-- blowup -->
-		<section style="height:100%;background-color:#e5e5e5;position:relative;white-space:pre-line;display:block">
+		<section id="mywork" style="height:100%;background-color:#e5e5e5;position:relative;">
 		<div class="container">
 				<div class="col-md-12" style="margin-top:35px">
 					<h2 style="color:#222c39;text-align:left;margin:25px 0px 25px 0px"><b><span class ="topbar" >Sample</span> Work</b></h2>
@@ -474,8 +348,8 @@ Communication & Interface Design - Logos, posters, branding, Ui & Ux design for 
 								</div>
 						</div>
 					</div>
-
 		</div>
+		<h4 style="color:#c4c4c4;margin-top:15px"><a href="staging.html">View all my works</a></h4>
 	</section>
 		<!-- /blowup -->
 
@@ -538,6 +412,17 @@ Communication & Interface Design - Logos, posters, branding, Ui & Ux design for 
 		<script src="js/main.js"></script>
 
 		<script type="text/javascript">
+
+		$(document).find('.nav_ele').on('click',function(){
+			var link_id = $(this).data('link_id');
+			console.log(link_id);
+			$(document).find('body').animate({
+				scrollTop: $('body').scrollTop() + $(document).find('#' + link_id).offset().top - 250
+			}, 1000);
+
+		});
+
+
 		var c1 = ["Research + Design"  ,"Solve problem + Conceptualize", "Prototype + Visualize", "Engineer + Market"]
 		var c2 = ["Photoshop" ,"Illustrator" ,"Indesign" ,"Coreldraw"]
 		var c3 = ["beautiful","clean" ,"intuitive","practical"]
@@ -549,7 +434,6 @@ Communication & Interface Design - Logos, posters, branding, Ui & Ux design for 
 		var main = 0;
 		var wait = false;
 		function tick(num,arr){
-				console.log(num,arr);
 				var i = num;
 				var ar = arr;
 		     c += 1;
