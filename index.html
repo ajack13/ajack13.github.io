@@ -8,7 +8,7 @@
 		<meta name="description" content="Page Preloading Effect: Re-creating the effect seen on fontface.ninja" />
 		<meta name="keywords" content="page loading, effect, initial, logo, sliding, web design, css animation, transform" />
 		<meta name="author" content="Codrops" />
-		<!-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> -->
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/effect1.css" />
@@ -113,7 +113,7 @@ body::-webkit-scrollbar-thumb {
 .topbar{
 	border-top:6px solid #4c6582;padding-top:10px
 }
-input.form-control{
+input.form-control ,textarea.form-control{
     background-color: #55606c !important;
     border: 1px solid #999999 !important;
 }
@@ -145,6 +145,40 @@ input.form-control{
 	display: inline-block;
 	margin: 0px 5px;
   cursor: pointer;
+}
+
+.suhas{
+	position:absolute;
+	top:-10px;right:15%;
+}
+.underline{
+	height:1px;
+	width:90%;
+	background-color:#fff ;
+	margin-top:20px;
+}
+@media (max-width: 1080px) {
+
+	.brand-img {
+	    width: 100%;
+	    left: 0%;
+	    position: relative;
+	    top: -10px;
+	}
+	.suhas{
+		position:relative;
+		display: block;
+		left:50%;
+	}
+	.res-sm{
+		width:100% !important;
+	}
+	.underline{
+		height:1px;
+		width:100%;
+		background-color:#fff ;
+		margin-top:20px;
+	}
 }
 </style>
 
@@ -316,19 +350,19 @@ input.form-control{
 			<div class="col-md-3 hidden-xs hidden-md hidden-sm">
 				<img class="pull-right" src="img/mural.png" />
 			</div>
-			<div style="position:relative" class="col-md-9 a_bs">
+			<div style="position:relative" class="res-sm col-md-9 a_bs">
 				<div class="">
-					<img style="position:absolute;top:-10px;right:15%" src = "img/profile-pic.png"/>
+					<img class="suhas" src = "img/profile-pic.png"/>
 					<div style="position:absolute;bottom:4%;width:400px;right:10%">
 						<button class="custom_btn">Linkedin</button>
 						<button class="custom_btn">More Details</button>
 					</div>
-					<div style="height:1px;width:90%;background-color:#fff ;margin-top:20px" class="row underline"></div>
+					<div class="row underline"></div>
 					<div style="text-align: initial">
 					  <h4 style="color:#fff;margin-top:30px">Hi there! I'm Suhas Naik</h4>
 					  <h5 style="color:#fff;margin:10px 0px 20px 0px">A designer, engineer with a Master’s Degree from NID. </h5>
 					</div>
-					<div style="height:1px;width:90%;background-color:#fff ;margin-top:20px" class="row underline"></div>
+					<div class="row underline"></div>
 					<br>
 					<div style="text-align: initial">
 					  <h5 style="color:#fff">Core Strengths  -  <span class="c_underline" id="c1">Research + Design</span></h5>
@@ -344,7 +378,7 @@ input.form-control{
 					  <h5 style="color:#fff">Looking forward to <span class="c_underline" id="c6"> learn </span></h5>
 						<h5 style="color:#fff">with <span class="c_underline" id="c7">companies</span></h5>
 					</div>
-					<div style="height:1px;width:90%;background-color:#fff ;margin-top:20px" class="row underline"></div>
+					<div class="row underline"></div>
 				</div>
 			</div>
 
@@ -438,29 +472,29 @@ Communication & Interface Design - Logos, posters, branding, Ui & Ux design for 
 						<h2 style="color:#fff"><b><span class="topbar">Get In</span> Touch</b></h2>
 					</div>
 
-					<h5 style="color:#fff">Telecom Layout,<br> Kodigehalli,Bangalore,<br> Karnataka,IND - 560097</h5>
-					<h5 style="color:#fff">+91 - 994 542 5740</h5>
-					<h5 style="color:#fff">suhas.b.naik@gmail.com</h5>
+					<h4 style="color:#fff">Telecom Layout,<br> Kodigehalli,Bangalore,<br> Karnataka,IND - 560097</h4>
+					<h4 style="color:#fff">+91 - 994 542 5740</h4>
+					<h4 style="color:#fff">suhas.b.naik@gmail.com</h4>
 				</div>
 				<div class="col-md-4">
 					<div class="row">
 						<p style="color:#fff">Or drop a Message, in the form below -</p>
 					</div>
 					<lable>Name
-						<input class="form-control" placeholder=""/>
+						<input class="form-control" placeholder="Name *"/>
 					</lable>
 					<lable>Email
-						<input class="form-control" placeholder=""/>
+						<input class="form-control" placeholder="Email *"/>
 					</lable>
 					<lable>say something
-						<input class="form-control" placeholder=""/>
+						<input class="form-control" placeholder="Subject *"/>
 					</lable>
 				</div>
 
 				<div class="col-md-4">
 					<br>
 					<lable>Name
-						<input type="text" class="form-control" placeholder=""/>
+						<textarea type="text" class="form-control" placeholder="Text *"></textarea>
 					</lable>
 				</div>
 
