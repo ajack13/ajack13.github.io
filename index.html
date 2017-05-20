@@ -14,6 +14,7 @@
 		<link rel="stylesheet" type="text/css" href="css/effect1.css" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="css/img_blow.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 		<script src="js/modernizr.custom.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -37,7 +38,12 @@
 	width:400px;
 	right:10%
 }
-
+.cur{
+	text-align: justify;
+}
+.form-control{
+	color:#fff !important;
+}
 @media (max-width: 1080px) {
 
 	.brand-img {
@@ -65,7 +71,14 @@
 		display: block;
 		/*bottom:4%;*/
 		width:350px;
+		margin: 30px;
 		/*right:10%*/
+	}
+	.mural{
+		display: none !important;
+	}
+	.cur{
+		text-align: center;
 	}
 }
 </style>
@@ -232,12 +245,13 @@
 			</nav>
 
 		<section id="myhome" style="height:750px">
-			<div class="col-md-3 hidden-xs hidden-md hidden-sm">
+			<div id="mural" class="col-md-3 hidden-xs hidden-md hidden-sm">
 				<img class="pull-right" src="img/mural.png" />
 			</div>
 			<div style="position:relative" class="res-sm col-md-9 a_bs">
-				<div class="">
-					<img class="suhas" src = "img/profile-pic.png"/>
+					<div class="suhas">
+						<img src = "img/profile-pic.png"/>
+					</div>
 					<div class="row underline"></div>
 					<div style="text-align: initial">
 					  <h4 style="color:#fff;margin-top:30px">Hi there! I'm Suhas Naik</h4>
@@ -264,7 +278,6 @@
 						<button class="custom_btn">More Details</button>
 					</div>
 					<div class="row underline"></div>
-				</div>
 			</div>
 
 
@@ -350,16 +363,18 @@ Communication & Interface Design - Logos, posters, branding, Ui & Ux design for 
 	</section>
 		<!-- /blowup -->
 
-		<section id="contactus contactus1" class="container">
+		<section style="padding:100px 0px" id="contactus contactus1" class="container">
 			<div class="col-md-12">
-				<div class="col-md-4">
+				<div class="cur col-md-4">
 					<div class="row">
 						<h2 style="color:#fff"><b><span class="topbar">Get In</span> Touch</b></h2>
 					</div>
 
-					<h4 style="color:#fff">Telecom Layout,<br> Kodigehalli,Bangalore,<br> Karnataka,IND - 560097</h4>
-					<h4 style="color:#fff">+91 - 994 542 5740</h4>
-					<h4 style="color:#fff">suhas.b.naik@gmail.com</h4>
+					<h4 class="cur" style="color:#fff"><span class="fa fa-map-marker" style="color:#fff; margin:0px 15px 0px 0px;"></span>Telecom Layout, Kodigehalli<br><br>Bangalore, Karnataka,IND - 560097</h4>
+					<br>
+					<h4 class="cur" style="color:#fff"><span class="fa fa-mobile fa-lg" style="color:#fff;margin:0px 15px 0px 0px;"></span>+91 - 994 542 5740</h4>
+					<br>
+					<h4 class="cur" style="color:#fff"><span class="fa fa-envelope" style="color:#fff;margin:0px 15px 0px 0px;"></span>suhas.b.naik@gmail.com</h4>
 				</div>
 				<div class="col-md-4">
 					<div class="row">
@@ -368,34 +383,41 @@ Communication & Interface Design - Logos, posters, branding, Ui & Ux design for 
 					<lable>
 						<input class="form-control" placeholder="Name *"/>
 					</lable>
+					<br>
 					<lable>
 						<input class="form-control" placeholder="Email *"/>
 					</lable>
+					<br>
 					<lable>
 						<input class="form-control" placeholder="Subject *"/>
 					</lable>
 				</div>
 
 				<div class="col-md-4">
-					<br>
-					<lable>Name
-						<textarea type="text" class="form-control" placeholder="Text *"></textarea>
+					&nbsp;
+					<lable>
+						<textarea type="text" style="margin-top:10px" class="form-control" placeholder="Text *"></textarea>
 					</lable>
+					<br>
+					<button class="custom_btn pull-right">Send Message</button>
 				</div>
 
-			<div>
+			</div>
 		</section>
 
-		<div 	class="nav_ele button-wrapper-large" data-link_id="contactus1" >
-			<a href="#" style="color:#fff;text-decoration:none" class="a-btn">
-			<span class="a-btn-text">Hire Suhas!</span>
-			<span class="a-btn-slide-text">Contact Me</span>
+		<!-- <div 	class="nav_ele button-wrapper-large" data-link_id="contactus1" >
+			<a href="#" style="color:#fff;text-decoration:none" class="a-btn"> -->
+			<!-- <span class="a-btn-slide-text">Contact Me</span>
 			<span class="a-btn-icon-right"><span></span></span>
 			</a>
-		</div>
+		</div> -->
 
 		<div style="position:fixed;height:50px;width:100%;border:1px solid #000;bottom:0;left:0;background-color:#17202c">
 
+			<div class="col-md-12 text-center">
+				<span class="a-btn-text cl-effect-1 nav_ele pull-left" style="color:#fff;position: absolute;top: 0;left: 0;" data-link_id="contactus1"><a href="#">Hire Suhas</a></span>
+				<span style="color:#fff" class="fa fa-chevron-down fa-lg"></span>
+			</div>
 		</div>
 		<!-- <footer>
 		<div style="background-color:#000;opacity:0.7;height:75px">
