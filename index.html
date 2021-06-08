@@ -23,6 +23,8 @@
     </style>
      
 </head>
+        <script src="https://browser.sentry-cdn.com/6.4.1/bundle.tracing.min.js" integrity="sha384-hddl7X3flGhIMJgLUpwZDzLOWf8GDApKvKos/jS4z7Uz/sejXA0thkp9JCZgoDG4" crossorigin="anonymous"></script>
+
 
 <style type="text/css">
   .joshfin{
@@ -146,7 +148,7 @@
           <div class="margin-top-3">
             <form class="slides-form" action="#" autocomplete="off">
               <input type="email" disabled="" class="input-12 rounded ae-5 fromLeft" name="email" placeholder="Email address"/>
-              <button type="submit" class="button blue rounded ae-7 fromCenter" name="button">Get In Touch</button>
+              <button type="submit" id="submit" class="button blue rounded ae-7 fromCenter" name="button">Get In Touch</button>
             </form>
           </div>
         </div>
@@ -193,4 +195,22 @@
     <script src="js/slides.min.js?52351" type="text/javascript"></script>
      
 </body>
+        <script>
+     
+        Sentry.init({
+        dsn: "https://eaa1e946bf2c41cfbb5eca10984ab61a@o543160.ingest.sentry.io/5782042",
+        // this assumes your build process sets "npm_package_version" in the env
+        //   release: "my-project-name@" + process.env.npm_package_version,
+        integrations: [new Sentry.Integrations.BrowserTracing()],
+
+        // We recommend adjusting this value in production, or using tracesSampler
+        // for finer control
+        tracesSampleRate: 1.0,
+        });
+       
+        $("#submit").on("click", function(){
+            var yo = aa();
+        });
+    
+    </script>
 </html>
