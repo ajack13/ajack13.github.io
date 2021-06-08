@@ -23,13 +23,46 @@
     </style>
      
 </head>
-        <script src="https://browser.sentry-cdn.com/6.4.1/bundle.tracing.min.js" integrity="sha384-hddl7X3flGhIMJgLUpwZDzLOWf8GDApKvKos/jS4z7Uz/sejXA0thkp9JCZgoDG4" crossorigin="anonymous"></script>
-
 
 <style type="text/css">
   .joshfin{
       font-family: 'Josefin Sans', sans-serif;
-    } 
+    }
+
+  .button{
+    border: 2px solid white !important;
+    background: 0,0,0,0 !important;
+    font-weight: bold !important;
+    padding: 12px 21px !important;
+  }
+
+  input::placeholder{
+    color: #ffffff !important;
+    opacity: 1 !important;
+  }
+
+  input{
+    background: none !important;
+    border: 2px solid white !important;
+    color: white !important;
+    border-radius: 0px !important;
+  }
+
+  .button:hover{
+    border: 2px solid #000000 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+  }
+
+  .background_particle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  } 
 </style>
 <body class="slides animated noPreload">
 <svg id="customSvgLibrary" xmlns="http://www.w3.org/2000/svg" style="display:none" id="customSvgLibrary">
@@ -147,8 +180,8 @@
           <p class="larger light ae-2 joshfin"><b class="opacity-8">We help entrepreneurs / freelancers / business owners scale and get more clients by building incredible marketing systems.</b></p>
           <div class="margin-top-3">
             <form class="slides-form" action="#" autocomplete="off">
-              <input type="email" disabled="" class="input-12 rounded ae-5 fromLeft" name="email" placeholder="Email address"/>
-              <button type="submit" id="submit" class="button blue rounded ae-7 fromCenter" name="button">Get In Touch</button>
+              <input type="email" class="input-12 ae-5 fromLeft" name="email" placeholder="Email address"/>
+              <button type="submit" id="submit" class="button ae-7 fromCenter" disabled name="button">Get In Touch</button>
             </form>
           </div>
         </div>
@@ -156,7 +189,8 @@
       </div>
     </div>
   </div>
-  <div class="background" style="background-image:url(assets/img/background/hero2.jpg)"></div>
+  <!-- <div class="background" style="background-image:url(assets/img/background/hero2.jpg)"></div> -->
+  <canvas class="background_particle"></canvas>
 </section>
 <!-- Panel Bottom #02 -->
 <nav class="panel bottom forceMobileView">
@@ -190,27 +224,34 @@
 
 <!-- jQuery 3.5.1 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    
     <!-- Compressed Scripts -->
     <script src="js/slides.min.js?52351" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
      
 </body>
         <script>
-     
-        Sentry.init({
-        dsn: "https://eaa1e946bf2c41cfbb5eca10984ab61a@o543160.ingest.sentry.io/5782042",
-        // this assumes your build process sets "npm_package_version" in the env
-        //   release: "my-project-name@" + process.env.npm_package_version,
-        integrations: [new Sentry.Integrations.BrowserTracing()],
-
-        // We recommend adjusting this value in production, or using tracesSampler
-        // for finer control
-        tracesSampleRate: 1.0,
-        });
-       
-        $("#submit").on("click", function(){
-            var yo = aa();
-        });
+     var particles = Particles.init({
+        selector: '.background_particle',
+        // color: '#DA0463',
+        // color: '#008080',
+        color: ['#00E676', "#ffffff"],
+        connectParticles: true,
+        speed: 0.7,
+        responsive: [
+            {
+              breakpoint: 768,
+              options: {
+                maxParticles: 90
+              }
+            }, {
+              breakpoint: 375,
+              options: {
+                maxParticles: 30
+              }
+            }
+          ]
+      });
     
     </script>
 </html>
